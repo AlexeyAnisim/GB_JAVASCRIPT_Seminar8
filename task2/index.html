@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Создать в html список состоящий из 3-х произвольных элементов li
+Нужно создать кнопку которая будет добавлять элементы списка с текстом “новый элемент списка”
+Создать кнопку, которая будет удалять первый элемент из созданного списка
+Создать кнопку, при клике на которую ей добавляется-убирается класс “click”   -->
+
+    <ul class="menu">
+        <li>Первый</li>
+        <li>Второй</li>
+        <li>Третий</li>
+    </ul>
+
+    <button class="button1">Кликни меня и добавится новый элемент!</button>
+    <button class="button2">Кликни меня и будет удален первый элемент списка!</button>
+    <button class="button3">Кликни меня и изменится класс "click"!</button>
+
+
+    <script>
+        // Нужно создать кнопку которая будет добавлять элементы списка с текстом “новый элемент списка”
+
+        const button1 = document.querySelector('.button1')
+        const list = document.querySelector('ul');
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Новый элемент списка';
+        button1.onclick = (event) => { list.appendChild(newItem) };
+
+        // Создать кнопку, которая будет удалять первый элемент из созданного списка    
+
+        const button2 = document.querySelector('.button2');
+        const elementByFirstTag = document.querySelector('ul > li:first-child');
+        button2.onclick = (event) => { elementByFirstTag.remove() };
+
+        //    Создать кнопку, при клике на которую ей добавляется-убирается класс “click”
+
+
+        document.querySelector('.button3').classList.toggle('click');
+        console.log(document.querySelector('.button3'));
+
+    </script>
+</body>
+
+</html>
